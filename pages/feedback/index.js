@@ -1,4 +1,5 @@
 import { buildFeedbackPath, extractFeedback } from '../api/feedback'
+import Link from 'next/link'
 
 export default function FeedbackPage({ feedbackItems }) {
   return (
@@ -7,10 +8,10 @@ export default function FeedbackPage({ feedbackItems }) {
       <ul>
         {feedbackItems.map((item) => (
           <li key={item.id}>
-            <p>
-              {item.email}:<br />
-              {item.feedback}
-            </p>
+            <Link href={`/feedback/${item.id}`}>
+              <p>{item.email}:</p>
+              <p>{item.feedback}</p>
+            </Link>
           </li>
         ))}
       </ul>

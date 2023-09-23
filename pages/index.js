@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import Link from 'next/link'
 
 export default function Home() {
   const [feedbackItems, setFeedbackItems] = useState([])
@@ -54,10 +55,10 @@ export default function Home() {
       <ul>
         {feedbackItems.map((item) => (
           <li key={item.id}>
-            <p>
-              {item.email}:<br />
-              {item.feedback}
-            </p>
+            <Link href={`/feedback/${item.id}`}>
+              <p>{item.email}:</p>
+              <p>{item.feedback}</p>
+            </Link>
           </li>
         ))}
       </ul>

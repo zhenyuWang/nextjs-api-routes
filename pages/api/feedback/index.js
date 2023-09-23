@@ -16,7 +16,7 @@ export default function handler(req, res) {
     const feedback = req.body.feedback
 
     const newFeedback = {
-      id: new Date().toISOString(),
+      id: `${Date.now()}`,
       email: email,
       feedback: feedback,
     }

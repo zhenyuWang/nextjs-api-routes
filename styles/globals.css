@@ -50,3 +50,11 @@ textarea {
   width: 100%;
   margin-bottom: 10px;
 }
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  color: aqua;
+}
